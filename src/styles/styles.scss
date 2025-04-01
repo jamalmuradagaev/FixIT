@@ -1,0 +1,16 @@
+@use './variables.scss';
+
+@use './pages/Welcome.module.scss';
+@use './pages/Authorization.module.scss';
+@use './pages/Registration.module.scss';
+
+:root {
+    background-color: var(--color-white);
+}
+
+#root {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
