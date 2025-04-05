@@ -1,7 +1,8 @@
 :root {
   --color-dark-green: #307B75;
   --color-white: #fff;
-  --color-grey: #dbdbdb;
+  --color-gray: #dbdbdb;
+  --color-dark-gray-900: #1e1e1e;
 }
 
 @font-face {
@@ -44,6 +45,7 @@
   margin: 10px 0;
   font-family: "Montserrat";
   font-weight: 500;
+  font-size: 16px;
   border: 2px solid var(--color-dark-green);
   border-radius: 8px;
 }
@@ -91,7 +93,7 @@
 .welcomeImage div {
   width: 430px;
   height: 750px;
-  background-color: #307B75;
+  background-color: var(--color-dark-green);
   border-radius: 0 0 50% 50%/30% 30% 30% 30%;
   display: flex;
   align-items: end;
@@ -100,38 +102,41 @@
   margin: 0;
 }
 
-img {
+.logo {
   margin: 50px 0 50px;
 }
 
-h2 {
+.descriptionForm {
   margin: 50px 0 40px 0;
   font-size: 36px;
   font-family: "Montserrat Alternates";
 }
 
-form {
+.startForm {
   width: 500px;
   margin: 0 auto;
   text-align: left;
 }
-form p {
+.startForm p {
   margin: 35px 0 20px 0;
-  font-size: 20px;
+  font-size: 18px;
+  font-family: "Montserrat";
+  color: var(--color-dark-gray-900);
 }
-form .lostPassword {
+.startForm .lostPassword {
   color: var(--color-dark-green);
-  font-size: 16px;
+  font-size: 14px;
   margin: 10px 0 0 0;
   text-align: right;
   cursor: pointer;
 }
-form button {
+.startForm button {
   width: 500px;
-  height: 55px;
+  height: 48px;
   margin: 50px 0;
   font-family: "Montserrat";
   font-weight: 500;
+  font-size: 15px;
   background-color: var(--color-dark-green);
   border: 2px solid var(--color-dark-green);
   border-radius: 8px;
@@ -139,7 +144,12 @@ form button {
   cursor: pointer;
 }
 
-p a {
+.anotherWay {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 14px;
+}
+.anotherWay a {
   color: var(--color-dark-green);
   cursor: pointer;
 }

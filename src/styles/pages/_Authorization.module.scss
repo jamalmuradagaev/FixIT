@@ -1,26 +1,28 @@
-img {
+.logo {
     margin: 50px 0 50px;
 }
 
-h2 {
+.descriptionForm {
     margin: 50px 0 40px 0;
     font-size: 36px;
     font-family: 'Montserrat Alternates';
 }
 
-form {
+.startForm {
     width: 500px;
     margin: 0 auto;
     text-align: left;
 
     p {
         margin: 35px 0 20px 0;
-        font-size: 20px;
+        font-size: 18px;
+        font-family: 'Montserrat';
+        color: var(--color-dark-gray-900);
     }
 
     .lostPassword {
         color: var(--color-dark-green);
-        font-size: 16px;
+        font-size: 14px;
         margin: 10px 0 0 0;
         text-align: right;
         cursor: pointer;
@@ -28,10 +30,11 @@ form {
 
     button {
         width: 500px;
-        height: 55px;
+        height: 48px;
         margin: 50px 0;
         font-family: 'Montserrat';
         font-weight: 500;
+        font-size: 15px;
         background-color: var(--color-dark-green);
         border: 2px solid var(--color-dark-green);
         border-radius: 8px;
@@ -40,7 +43,11 @@ form {
     }
 }
 
-p{
+.anotherWay{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 14px;
+
     a {
         color: var(--color-dark-green);
         cursor: pointer;

@@ -13,11 +13,11 @@ const AuthorizationPage = () => {
 
     return (
         <div>
-            <img src={logo} alt="" />
+            <img src={logo} alt="" className={s.logo}/>
 
-            <h2>Войдите в свою <br /> учетную запись</h2>
+            <h2 className={s.descriptionForm}>Войдите в свою <br /> учетную запись</h2>
 
-            <form action="">
+            <form action="" className={s.startForm}>
                 <p>Логин</p>
                 <Input placeholder='Номер телефона' value={login} onChange={(e: any) => setLogin(e.target.value)} name='login'></Input>
                 <p>Пароль</p>
@@ -27,7 +27,7 @@ const AuthorizationPage = () => {
             </form>
 
 
-            <p>Нет аккаунта? <a onClick={() => navigate('/registration')}>Зарегистрироваться</a></p>
+            <p className={s.anotherWay}>Нет аккаунта? <a onClick={() => navigate('/registration')}>Зарегистрироваться</a></p>
         </div>
     )
 }

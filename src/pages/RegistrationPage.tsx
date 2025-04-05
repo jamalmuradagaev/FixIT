@@ -14,11 +14,11 @@ const RegistrationPage = () => {
 
     return (
         <div>
-            <img src={logo} alt="" />
+            <img src={logo} alt="" className={s.logo}/>
 
-            <h2>Создайте свою <br /> учетную запись</h2>
+            <h2 className={s.descriptionForm}>Создайте свою <br /> учетную запись</h2>
 
-            <form action="">
+            <form action="" className={s.startForm}>
                 <p>Имя</p>
                 <Input placeholder='Армаслисурхан' value={name} onChange={(e: any) => setName(e.target.value)} name='name'></Input>
                 <p>Логин</p>
@@ -29,7 +29,7 @@ const RegistrationPage = () => {
             </form>
 
 
-            <p>Уже есть аккаунт? <a onClick={() => navigate('/authorization')}>Войти</a></p>
+            <p className={s.anotherWay}>Уже есть аккаунт? <a onClick={() => navigate('/authorization')}>Войти</a></p>
         </div>
     )
 }
