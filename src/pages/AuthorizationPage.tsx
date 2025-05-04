@@ -22,7 +22,7 @@ const AuthorizationPage = () => {
                 <Input placeholder='Номер телефона' value={login} onChange={(e: any) => setLogin(e.target.value)} name='login'></Input>
                 <p>Пароль</p>
                 <Input placeholder='*******' value={password} onChange={(e: any) => setPassword(e.target.value)} name='password'></Input>
-                <p className={s.lostPassword}>Забыли пароль?</p>
+                <p className={s.lostPassword} onClick={() => navigate('/recovery1')}>Забыли пароль?</p>
                 <button>Войти</button>
             </form>
 
