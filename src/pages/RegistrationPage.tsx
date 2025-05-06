@@ -8,9 +8,10 @@ const RegistrationPage = () => {
     const navigate = useNavigate()
     const [name, setName] = useState<string>()
     const [login, setLogin] = useState<string>('')
+    const [numberPhone, setNumberPhone] = useState<string>()
     const [password, setPassword] = useState<string>('')
 
-    console.log({ name, login, password })
+    console.log({ name, login, numberPhone, password })
 
     return (
         <div>
@@ -20,11 +21,13 @@ const RegistrationPage = () => {
 
             <form action="" className={s.startForm}>
                 <p>Имя</p>
-                <Input placeholder='Армаслисурхан' value={name} onChange={(e: any) => setName(e.target.value)} name='name'></Input>
+                <Input placeholder='Армаслисурхан' type={'text'} value={name} onChange={(e: any) => setName(e.target.value)} name='name'></Input>
                 <p>Логин</p>
-                <Input placeholder='Номер телефона' value={login} onChange={(e: any) => setLogin(e.target.value)} name='login'></Input>
+                <Input placeholder='e-mail' type={'email'} value={login} onChange={(e: any) => setLogin(e.target.value)} name='login'></Input>
+                <p>Номер</p>
+                <Input placeholder='Номер телефона' type={'number'} value={numberPhone} onChange={(e: any) => setNumberPhone(e.target.value)} name='numberPhone'></Input>
                 <p>Пароль</p>
-                <Input placeholder='*******' value={password} onChange={(e: any) => setPassword(e.target.value)} name='password'></Input>
+                <Input placeholder='*******' type={'password'} value={password} onChange={(e: any) => setPassword(e.target.value)} name='password' isPassword={true}></Input>
                 <button>Создать</button>
             </form>
 

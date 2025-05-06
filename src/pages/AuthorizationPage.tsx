@@ -19,9 +19,9 @@ const AuthorizationPage = () => {
 
             <form action="" className={s.startForm}>
                 <p>Логин</p>
-                <Input placeholder='Номер телефона' value={login} onChange={(e: any) => setLogin(e.target.value)} name='login'></Input>
+                <Input placeholder='e-mail' type={'email'} value={login} onChange={(e: any) => setLogin(e.target.value)} name='login'></Input>
                 <p>Пароль</p>
-                <Input placeholder='*******' value={password} onChange={(e: any) => setPassword(e.target.value)} name='password'></Input>
+                <Input placeholder='*******' type={'password'} value={password} onChange={(e: any) => setPassword(e.target.value)} name='password' isPassword={true}></Input>
                 <p className={s.lostPassword} onClick={() => navigate('/recovery1')}>Забыли пароль?</p>
                 <button>Войти</button>
             </form>
