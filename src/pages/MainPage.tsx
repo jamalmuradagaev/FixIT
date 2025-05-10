@@ -1,6 +1,10 @@
+import Header from "../components/Header"
+
 const MainPage = () => {
     return (
-        <div>100</div>
+        <div>
+            <Header />
+        </div>
     )
 }
 
