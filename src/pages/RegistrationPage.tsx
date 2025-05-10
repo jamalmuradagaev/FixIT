@@ -6,20 +6,48 @@ import logo from '../../public/logo.png'
 
 const RegistrationPage = () => {
     const navigate = useNavigate()
-    const [name, setName] = useState<string>()
+    const [name, setName] = useState<string>('')
     const [login, setLogin] = useState<string>('')
-    const [numberPhone, setNumberPhone] = useState<string>()
+    const [numberPhone, setNumberPhone] = useState<string>('')
     const [password, setPassword] = useState<string>('')
 
-    console.log({ name, login, numberPhone, password })
+    console.log(name, login, numberPhone, password)
+
+    const handleRegister = async(e: any) => {
+        e.preventDefault()
+        try {
+            const response = await fetch('http://188.120.240.237:8000/api/register/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "email": login,
+                    "username": name,
+                    "phone_number": numberPhone,
+                    "password": password
+                  })
+            })
+    
+            if (!response.ok) {
+                throw new Error('Запрос не ушел на сервер')
+            }
+    
+            const data = await response.json()
+            console.log(data)
+        }
+        catch (e) {
+            console.log(e)
+        }
+    }
 
     return (
         <div>
-            <img src={logo} alt="" className={s.logo}/>
+            <img src={logo} alt="" className={s.logo} />
 
             <h2 className={s.descriptionForm}>Создайте свою <br /> учетную запись</h2>
 
-            <form action="" className={s.startForm}>
+            <form action="" className={s.startForm} onSubmit={(e: any) => handleRegister(e)}>
                 <p>Имя</p>
                 <Input placeholder='Армаслисурхан' type={'text'} value={name} onChange={(e: any) => setName(e.target.value)} name='name'></Input>
                 <p>Логин</p>
