@@ -1,12 +1,12 @@
 export const TokenUtils = {
     storeTokens: (accessToken: string, refreshToken: string) => {
-        localStorage.setItem('token', accessToken);
-        localStorage.setItem('refresh', refreshToken);
+        localStorage.setItem('accessToken', accessToken);
+        localStorage.setItem('refreshToken', refreshToken);
     },
     getAccessToken: () => localStorage.getItem('accessToken'),
     getRefreshToken: () => localStorage.getItem('refreshToken'),
     recoveryToken: async () => {
-        const refreshToken = localStorage.getItem('refresh')
+        const refreshToken = localStorage.getItem('refreshToken')
 
         const response = await fetch('http://188.120.240.237:8000/api/token/refresh/', {
             method: 'POST',
