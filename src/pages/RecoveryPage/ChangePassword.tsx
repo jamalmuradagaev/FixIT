@@ -2,8 +2,10 @@ import s from '../../styles/pages/_Authorization.module.scss'
 import logo from '../../../public/logo.png'
 import Input from '../../components/Input'
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 
 const ChangePassword = () => {
+    const navigate = useNavigate()
     const [enterPassword, setEnterPassword] = useState<string>('')
     const [confirmPassword, setConfirmPassword] = useState<string>('')
 
@@ -16,10 +18,10 @@ const ChangePassword = () => {
             <form action="" className={s.startForm}>
                 <p style={{textAlign: 'center'}}>Создайте новый пароль. <br />Пароль должен содержать не менее 6 символов.</p>
                 <p>Введите новый пароль</p>
-                <Input placeholder='*******' value={enterPassword} onChange={(e: any) => setEnterPassword(e.target.value)} name='password'></Input>
+                <Input placeholder='*******' type={'password'} value={enterPassword} onChange={(e: any) => setEnterPassword(e.target.value)} name='password'></Input>
                 <p>Подтвердите пароль</p>
-                <Input placeholder='*******' value={confirmPassword} onChange={(e: any) => setConfirmPassword(e.target.value)} name='password'></Input>
-                <button>Обновить пароль</button>
+                <Input placeholder='*******' type={'password'} value={confirmPassword} onChange={(e: any) => setConfirmPassword(e.target.value)} name='password'></Input>
+                <button onClick={() => navigate('/recovery4')}>Обновить пароль</button>
             </form>
         </div>
     )

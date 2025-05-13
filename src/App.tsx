@@ -9,6 +9,7 @@ import EnterCode from "./pages/RecoveryPage/EnterCode.tsx";
 import ChangePassword from "./pages/RecoveryPage/ChangePassword.tsx";
 import MainPage from "./pages/MainPage.tsx";
 import { RootState } from "./store/store.ts";
+import SuccessPage from "./pages/RecoveryPage/SuccessPage.tsx";
 
 function App() {
   const isAuthorized = useSelector((state: RootState) => state.user.isAuthorized);
@@ -27,6 +28,7 @@ function App() {
           <Route path="recovery1" element={<RecoveryPage />}></Route>
           <Route path="recovery2" element={<EnterCode />}></Route>
           <Route path="recovery3" element={<ChangePassword />}></Route>
+          <Route path="recovery4" element={<SuccessPage />}></Route>
         </Routes>
       }
     </BrowserRouter>

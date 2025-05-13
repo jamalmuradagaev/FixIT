@@ -16,7 +16,7 @@ const RecoveryPage = () => {
 
             <form action="" className={s.startForm}>
                 <p style={{textAlign: 'center'}}>Пожалуйста, введите адрес своей электронной <br />почты для сброса пароля</p>
-                <Input placeholder='e-mail' value={mail} onChange={(e: any) => setMail(e.target.value)} name='mail'></Input>
+                <Input placeholder='e-mail' type={'mail'} value={mail} onChange={(e: any) => setMail(e.target.value)} name='mail'></Input>
                 <button type='button' onClick={() => navigate('/recovery2')}>Сбросить пароль</button>
             </form>
         </div >
