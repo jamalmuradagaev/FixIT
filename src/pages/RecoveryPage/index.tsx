@@ -3,6 +3,7 @@ import logo from '../../../public/logo.png'
 import Input from '../../components/Input'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
+import Button from '../../components/Button'
 
 const RecoveryPage = () => {
     const navigate = useNavigate()
@@ -17,7 +18,7 @@ const RecoveryPage = () => {
             <form action="" className={s.startForm}>
                 <p style={{textAlign: 'center'}}>Пожалуйста, введите адрес своей электронной <br />почты для сброса пароля</p>
                 <Input placeholder='e-mail' type={'mail'} value={mail} onChange={(e: any) => setMail(e.target.value)} name='mail'></Input>
-                <button type='button' onClick={() => navigate('/recovery2')}>Сбросить пароль</button>
+                <Button type='button' onClick={() => navigate('/recovery2')}>Сбросить пароль</Button>
             </form>
         </div >
     )

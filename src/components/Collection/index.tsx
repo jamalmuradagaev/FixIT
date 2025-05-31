@@ -1,10 +1,13 @@
 import s from './Collection.module.scss'
 import img from '../../assets/Mask group.png'
 import SubHeading from '../SubHeading'
+import { useNavigate } from 'react-router'
 
 const Collection = () => {
+    const navigate = useNavigate();
+
     return (
-        <div className={s.collection}>
+        <div className={s.collection} onClick={() => navigate('/collection')}>
             <div className={s.image}>
                 <img src={img} alt="" />
             </div>

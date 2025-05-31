@@ -10,6 +10,7 @@ import ChangePassword from "./pages/RecoveryPage/ChangePassword.tsx";
 import MainPage from "./pages/MainPage.tsx";
 import { RootState } from "./store/store.ts";
 import SuccessPage from "./pages/RecoveryPage/SuccessPage.tsx";
+import CollectionDetails from "./pages/CollectionDetails.tsx";
 
 function App() {
   const isAuthorized = useSelector((state: RootState) => state.user.isAuthorized);
@@ -19,7 +20,8 @@ function App() {
       {isAuthorized ?
         <Routes>
           <Route path="/" element={<MainPage />}></Route>
-        </Routes> 
+          <Route path="collection" element={<CollectionDetails />}></Route>
+        </Routes>
         :
         <Routes>
           <Route path="/" element={<WelcomePage />}></Route>

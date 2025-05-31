@@ -6,6 +6,7 @@ import { useState } from 'react'
 import { TokenUtils } from '../utils/TokenUtils'
 import { useDispatch } from 'react-redux'
 import { setAccessToken, setIsAuthorized, setRefreshToken } from '../store/userSlice'
+import Button from '../components/Button'
 
 const AuthorizationPage = () => {
     const dispatch = useDispatch()
@@ -61,7 +62,7 @@ const AuthorizationPage = () => {
                 <p>Пароль</p>
                 <Input placeholder='*******' type={'password'} value={password} onChange={(e: any) => setPassword(e.target.value)} name='password' isPassword={true}></Input>
                 <p className={s.lostPassword} onClick={() => navigate('/recovery1')}>Забыли пароль?</p>
-                <button>Войти</button>
+                <Button type='submit'>Войти</Button>
             </form>
 
 

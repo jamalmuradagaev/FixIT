@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 import { useState } from 'react'
 import Input from '../components/Input'
 import logo from '../../public/logo.png'
+import Button from '../components/Button'
 
 const RegistrationPage = () => {
     const navigate = useNavigate()
@@ -10,8 +11,6 @@ const RegistrationPage = () => {
     const [login, setLogin] = useState<string>('')
     const [numberPhone, setNumberPhone] = useState<string>('')
     const [password, setPassword] = useState<string>('')
-
-    console.log(name, login, numberPhone, password)
 
     const handleRegister = async(e: any) => {
         e.preventDefault()
@@ -56,7 +55,7 @@ const RegistrationPage = () => {
                 <Input placeholder='Номер телефона' type={'number'} value={numberPhone} onChange={(e: any) => setNumberPhone(e.target.value)} name='numberPhone'></Input>
                 <p>Пароль</p>
                 <Input placeholder='*******' type={'password'} value={password} onChange={(e: any) => setPassword(e.target.value)} name='password' isPassword={true}></Input>
-                <button>Создать</button>
+                <Button type='submit'>Создать</Button>
             </form>
 
 

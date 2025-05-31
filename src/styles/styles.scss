@@ -3,6 +3,7 @@
 @use './pages/Welcome.module.scss';
 @use './pages/Authorization.module.scss';
 @use './pages/Main.module.scss';
+@use './pages/CollectionDetails.module';
 
 :root {
     background-color: var(--color-white);

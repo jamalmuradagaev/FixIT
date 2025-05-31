@@ -132,19 +132,6 @@
   text-align: right;
   cursor: pointer;
 }
-.startForm button {
-  width: 500px;
-  height: 48px;
-  margin: 50px 0;
-  font-family: "Montserrat";
-  font-weight: 500;
-  font-size: 15px;
-  background-color: var(--color-dark-green);
-  border: 2px solid var(--color-dark-green);
-  border-radius: 8px;
-  color: var(--color-white);
-  cursor: pointer;
-}
 
 .anotherWay {
   font-family: "Montserrat";
@@ -261,6 +248,42 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
+}
+
+.collection {
+  width: 100%;
+  display: flex;
+  gap: 40px;
+}
+.collection .progress {
+  width: 30%;
+}
+.collection .progress img {
+  width: 100%;
+  height: 240px;
+  border-radius: 18px;
+}
+.collection .progress .creator {
+  width: 100%;
+  height: 55px;
+  margin: 10px 0 20px 0;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.collection .progress .creator img {
+  width: 35px;
+  height: 35px;
+}
+.collection .progress .progress {
+  width: 100%;
+  text-align: left;
+}
+.collection .description {
+  width: 70%;
 }
 
 :root {

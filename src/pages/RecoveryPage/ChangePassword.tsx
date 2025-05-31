@@ -3,6 +3,7 @@ import logo from '../../../public/logo.png'
 import Input from '../../components/Input'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
+import Button from '../../components/Button'
 
 const ChangePassword = () => {
     const navigate = useNavigate()
@@ -21,7 +22,7 @@ const ChangePassword = () => {
                 <Input placeholder='*******' type={'password'} value={enterPassword} onChange={(e: any) => setEnterPassword(e.target.value)} name='password'></Input>
                 <p>Подтвердите пароль</p>
                 <Input placeholder='*******' type={'password'} value={confirmPassword} onChange={(e: any) => setConfirmPassword(e.target.value)} name='password'></Input>
-                <button onClick={() => navigate('/recovery4')}>Обновить пароль</button>
+                <Button type='button' onClick={() => navigate('/recovery4')}>Обновить пароль</Button>
             </form>
         </div>
     )

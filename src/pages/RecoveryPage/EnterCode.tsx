@@ -2,6 +2,7 @@ import s from '../../styles/pages/_Authorization.module.scss'
 import logo from '../../../public/logo.png'
 import { useNavigate } from "react-router"
 import CodeInput from '../../components/CodeInput'
+import Button from '../../components/Button'
 
 const EnterCode = () => {
     const navigate = useNavigate()
@@ -15,7 +16,7 @@ const EnterCode = () => {
             <form action="" className={s.startForm}>
                 <p style={{textAlign: 'center'}}>Мы отправили ссылку для сброса пароля. <br />Введите 5-значный код, указанный в письме.</p>
                 <CodeInput />
-                <button type='button' onClick={() => navigate('/recovery3')}>Отправить</button>
+                <Button type='button' onClick={() => navigate('/recovery3')}>Отправить</Button>
             </form>
 
             <p className={s.anotherWay}>Не получили письмо? <a>Отправить повторно</a></p>
