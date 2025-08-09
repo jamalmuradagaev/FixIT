@@ -14,7 +14,7 @@ interface InputProps {
 }
 
 const Input = ({ placeholder, type, value, onChange, isPassword }: InputProps) => {
-    const [showPassword, setShowPassword] = useState(true)
+    const [showPassword, setShowPassword] = useState(false)
 
     if (isPassword) {
         return (
