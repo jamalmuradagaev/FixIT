@@ -12,7 +12,7 @@ const RegistrationPage = () => {
     const [numberPhone, setNumberPhone] = useState<string>('')
     const [password, setPassword] = useState<string>('')
 
-    const handleRegister = async(e: any) => {
+    const handleRegister = async(e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         try {
             const response = await fetch('http://188.120.240.237:8000/api/register/', {
@@ -46,15 +46,15 @@ const RegistrationPage = () => {
 
             <h2 className={s.descriptionForm}>Создайте свою <br /> учетную запись</h2>
 
-            <form action="" className={s.startForm} onSubmit={(e: any) => handleRegister(e)}>
+            <form action="" className={s.startForm} onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleRegister(e)}>
                 <p>Имя</p>
-                <Input placeholder='Армаслисурхан' type={'text'} value={name} onChange={(e: any) => setName(e.target.value)} name='name'></Input>
+                <Input placeholder='Армаслисурхан' type={'text'} value={name} onChange={(e:React.ChangeEvent<HTMLInputElement> ) => setName(e.target.value)} name='name'></Input>
                 <p>Логин</p>
-                <Input placeholder='e-mail' type={'email'} value={login} onChange={(e: any) => setLogin(e.target.value)} name='login'></Input>
+                <Input placeholder='e-mail' type={'email'} value={login} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLogin(e.target.value)} name='login'></Input>
                 <p>Номер</p>
-                <Input placeholder='Номер телефона' type={'number'} value={numberPhone} onChange={(e: any) => setNumberPhone(e.target.value)} name='numberPhone'></Input>
+                <Input placeholder='Номер телефона' type={'number'} value={numberPhone} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setNumberPhone(e.target.value)} name='numberPhone'></Input>
                 <p>Пароль</p>
-                <Input placeholder='*******' type={'password'} value={password} onChange={(e: any) => setPassword(e.target.value)} name='password' isPassword={true}></Input>
+                <Input placeholder='*******' type={'password'} value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} name='password' isPassword={true}></Input>
                 <Button type='submit'>Создать</Button>
             </form>
 
