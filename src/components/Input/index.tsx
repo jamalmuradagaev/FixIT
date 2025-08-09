@@ -8,7 +8,7 @@ interface InputProps {
     placeholder: string
     type: string
     value?: string
-    onChange: (value: any) => void
+    onChange: (value: React.ChangeEvent<HTMLInputElement>) => void
     name: string
     isPassword?: boolean
 }

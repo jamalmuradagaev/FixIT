@@ -16,7 +16,7 @@ const AuthorizationPage = () => {
 
     console.log({login, password})
 
-    const handleLogin = async(e: any) => {
+    const handleLogin = async(e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         try {
             const response = await fetch('http://188.120.240.237:8000/api/token/', {
@@ -46,7 +46,7 @@ const AuthorizationPage = () => {
             navigate('/');
         }
         catch (error) {
-            console.log(e)
+            console.log(error)
         }
     }
 
@@ -56,11 +56,11 @@ const AuthorizationPage = () => {
 
             <h2 className={s.descriptionForm}>Войдите в свою <br /> учетную запись</h2>
 
-            <form action="" className={s.startForm} onSubmit={(e: any) => handleLogin(e)}>
+            <form action="" className={s.startForm} onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleLogin(e)}>
                 <p>Логин</p>
-                <Input placeholder='e-mail' type={'email'} value={login} onChange={(e: any) => setLogin(e.target.value)} name='login'></Input>
+                <Input placeholder='e-mail' type={'email'} value={login} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLogin(e.target.value)} name='login'></Input>
                 <p>Пароль</p>
-                <Input placeholder='*******' type={'password'} value={password} onChange={(e: any) => setPassword(e.target.value)} name='password' isPassword={true}></Input>
+                <Input placeholder='*******' type={'password'} value={password} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)} name='password' isPassword={true}></Input>
                 <p className={s.lostPassword} onClick={() => navigate('/recovery1')}>Забыли пароль?</p>
                 <Button type='submit'>Войти</Button>
             </form>
