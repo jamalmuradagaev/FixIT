@@ -17,7 +17,7 @@ const CodeInput = () => {
         }
     };
 
-    const handleKeyDown = (e: any, index: any) => {
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
         if (e.key === "Backspace" && !values[index] && index > 0) {
             inputs.current[index - 1]?.focus();
             inputs.current[index - 1] = null
