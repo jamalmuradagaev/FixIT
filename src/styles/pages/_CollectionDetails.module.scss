@@ -22,6 +22,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            font-family: "Montserrat";
 
 
             .userImg {
@@ -38,6 +39,27 @@
         .goal {
             width: 100%;
             text-align: left;
+            font-family: 'Montserrat';
+
+            .progressBar {
+                border-radius: 7px; 
+                width: 100%;
+                height: 12px;
+                appearance: none;
+                
+            }
+            .progressBar::-webkit-progress-bar {
+            background-color: #cfcfcd;
+            border-radius: 7px;
+            }
+            .progressBar::-webkit-progress-value {
+            background-color: var(--color-orange);
+            border-radius: 7px;
+            }
+            .progressBar::-moz-progress-bar {
+             background-color: #cfcfcd;
+            }
+
         }
     }
 
