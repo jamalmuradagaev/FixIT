@@ -22,6 +22,7 @@ const CollectionDetails = () => {
                     </div>
                     <div className={s.goal}>
                         <p>Цель <b>4.563 ₽</b>/ 15.000 ₽ </p>
+                        <progress className={s.progressBar} value={4563/15000}></progress>
                     </div>
                     <Button type='button' style={{margin: '20px 0'}}>Пожертвовать сейчас</Button>
                 </div>
