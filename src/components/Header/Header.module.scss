@@ -19,6 +19,12 @@ header {
         .link {
             font-size: 28px;
             font-family: 'Montserrat Alternates';
+            text-decoration: none;
+            color: black;
+        }
+
+        .active {
+            color: var(--color-orange) ;
         }
     }
 }
