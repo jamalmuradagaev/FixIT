@@ -60,8 +60,8 @@ const RegistrationPage = () => {
                     rules={
                         {required: 'Заполните поле',
                          pattern: {
-                            value: /^[a-zA-Zа-яА-ЯёЁ0-9\s]+$/,
-                            message: 'Ваше имя не должно содержать символы'
+                            value: /^[a-zA-Zа-яА-ЯёЁ\s]+$/,
+                            message: 'Ваше имя не должно содержать символы и цифры'
                          }
                         }
                     }
