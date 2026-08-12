@@ -1,8 +1,7 @@
 import s from './CodeInput.module.scss';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
-const CodeInput = () => {
-    const [values, setValues] = useState<string[]>(Array(5).fill(''));
+const CodeInput = ({values, setValues}: {values: string[], setValues: (s: string[]) => void}) => {
     const inputs = useRef<(HTMLInputElement | null)[]>([])
 
     const handleChange = (value: string, index: number) => {
@@ -24,7 +23,7 @@ const CodeInput = () => {
         }
     };
 
-    return (
+    return ( 
         <div className={s.input}>
             {values.map((value, index) => (
                 <input

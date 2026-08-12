@@ -1,21 +1,23 @@
+import { useEffect, useState } from 'react'
+import { useNavigate } from "react-router"
+
 import s from '../../styles/pages/_Authorization.module.scss'
 import logo from '../../../public/logo.png'
-import { useNavigate } from "react-router"
 import CodeInput from '../../components/CodeInput'
-import Button from '../../components/Button'
-
-import { useForm } from 'react-hook-form'
 
 
 const EnterCode = () => {
+    const [values, setValues] = useState<string[]>(Array(5).fill(''));
 
-    const {handleSubmit} = useForm<{code: string}>({defaultValues: {code: ''}})
+    const code = '12345';
 
     const navigate = useNavigate()
 
-    const handleNextStep = () => {
-        navigate('/recovery3')
-    }
+    useEffect(() => {
+        if (values.join('') === code ) {
+            navigate('/recovery3')
+        }
+    }, [values])
 
     return (
         <div>
@@ -23,11 +25,10 @@ const EnterCode = () => {
 
             <h2 className={s.descriptionForm}>Проверьте свою <br />электронную почту</h2>
 
-            <form action="" className={s.startForm} onSubmit={handleSubmit(handleNextStep)}>
+            <div className={s.startForm}>
                 <p style={{textAlign: 'center'}}>Мы отправили ссылку для сброса пароля. <br />Введите 5-значный код, указанный в письме.</p>
-                <CodeInput />
-                <Button type='submit'>Отправить</Button>
-            </form>
+                <CodeInput values={values} setValues={setValues} />
+            </div>
 
             <p className={s.anotherWay}>Не получили письмо? <a>Отправить повторно</a></p>
         </div >
